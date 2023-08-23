@@ -1,0 +1,28 @@
+.content-body {
+  padding: 10px;
+  word-break: break-word;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.app_serives_item {
+  height: 75px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 7px;
+}
+
+.app_serives_item_name {
+  line-height: 65px;
+  font-size: 1rem;
+}
+
+.serviceslogo {
+  margin-right: 10px;
+  width: 65px;
+}
+
+.float-left {
+  float: left;
+}

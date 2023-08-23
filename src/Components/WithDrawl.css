@@ -1,0 +1,23 @@
+.app_withdraw_address_panel {
+  background: #eee;
+  padding-top: 24px;
+  padding-left: 20px;
+  border-radius: 7px;
+  height: 87px;
+  margin-top: 15px;
+  position: relative;
+}
+
+.content-body {
+  padding: 10px;
+}
+
+
+.app_miningpool_info_date_dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 20px;
+    border: 2px solid;
+    border-color: #fff;
+    background-color: green;
+}

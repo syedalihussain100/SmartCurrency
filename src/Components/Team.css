@@ -1,0 +1,193 @@
+.teambg {
+  background-color: #446e9b;
+  height: 100%;
+  width: 100%;
+}
+
+.app-team-bg {
+  width: 100%;
+  text-align: right;
+  height: 330px;
+}
+
+.app-team-bg-rule {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.app-team-invite {
+  width: 92%;
+  margin: 0 4%;
+  background: #feecae;
+  position: relative;
+  border-radius: 50px 10px 20px 10px;
+}
+
+.app-team-invite-push {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #806c16;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.gundongList2 {
+  position: absolute;
+  animation: geiwogun2 1s linear;
+  white-space: nowrap;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.app-team-invite-content {
+  background: #fff;
+  border-radius: 20px 5px 20px 10px;
+}
+.app-team-invite-qrcode-text {
+  line-height: 45px;
+  height: 45px;
+  text-align: center;
+}
+
+.app-team-invite-qrcode {
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+  padding: 5px;
+  background: #feecae;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+}
+
+canvas {
+  user-select: none;
+}
+
+.app-team-invite-content-item {
+  position: relative;
+  margin-top: 10px;
+  height: 40px;
+}
+
+.app-team-invite-content-item-text {
+  position: absolute;
+  left: 20px;
+  line-height: 40px;
+  color: #373c40;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.app-team-invite-content-item-copyinfo {
+  position: absolute;
+  right: 20px;
+  background: #f1f1f1;
+  padding: 5px 18px;
+  border-radius: 15px;
+}
+
+.app-team-invite-content-item-copyinfo-copy {
+  width: 30px;
+  /* text-align: center; */
+  margin: auto;
+}
+
+.app-team-invite-content-item-copyinfo-value {
+  color: #9ca3b3;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+.app-team-invite-content-tag {
+  color: #666;
+  font-size: 1.2rem;
+  padding: 15px;
+}
+
+.app-team-myteam {
+  width: 92%;
+  margin: 15px 4%;
+  background: #fff;
+  border-radius: 20px 10px 20px 10px;
+  position: relative;
+}
+
+.app-team-myteam-title {
+  position: relative;
+  height: 50px;
+}
+
+.app-team-myteam-title-text {
+  position: absolute;
+  left: 20px;
+  line-height: 50px;
+  color: #1a1e27;
+  font-size: 1.3rem;
+}
+
+.app-team-myteam-can-take {
+  text-align: center;
+  line-height: 20px;
+  color: #aaa;
+  font-size: 1.2rem;
+}
+
+.app-team-myteam-can-take-value {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #446e9b;
+}
+
+.app-team-myteam-can-take-usdt {
+  font-size: 14px;
+  color: #999;
+  margin-left: 10px;
+}
+
+.app-team-myteam-info {
+  margin: 2% 5%;
+  width: 90%;
+  background: #f9fafe;
+  border-radius: 10px;
+  position: relative;
+  height: 130px;
+}
+
+.app-team-myteam-info-item {
+  width: 33%;
+  float: left;
+  height: 57px;
+  position: relative;
+  padding: 13px;
+}
+
+.text-danger {
+  color: #446e9b !important;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-right {
+  text-align: right;
+}

@@ -1,0 +1,44 @@
+.mt {
+  margin-top: 65px;
+}
+
+.currencyContainer {
+  display: flex;
+  margin: 0px 20px;
+  border-bottom: 1px solid rgba(239, 239, 239, 1);
+}
+
+.currencyInput {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  background: #fff;
+}
+
+.currencyIcon {
+  font-size: 30px !important;
+  margin-right: 10px;
+}
+
+.app_set_lang_item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.app_set_lang_item_logo {
+  height: 40px;
+  width: 40px;
+  margin-right: 20px;
+}
+
+.borderBottom{
+  border-bottom: 1px solid rgba(239,239,239,1);
+  margin: 0px 20px;
+}
+
+.app_set_lang_item_name{
+  font-size: 1.3rem;
+}

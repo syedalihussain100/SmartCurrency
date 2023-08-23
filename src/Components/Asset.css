@@ -1,0 +1,265 @@
+.BG-color {
+  background: rgb(68, 110, 155) !important;
+}
+
+.app_asset_header {
+  height: 196px;
+  padding: 20px;
+}
+
+.app_asset_header_value {
+  line-height: 5rem;
+  color: #fff;
+}
+
+.app_asset_header_value_v {
+  font-size: 2.85rem;
+  font-weight: 400;
+}
+
+.app_asset_header_value_usdt {
+  font-size: 1.2rem;
+  opacity: 0.5;
+  margin-left: 0.5rem;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+.overflow-x {
+  overflow-x: scroll;
+  white-space: nowrap;
+  overflow-y: hidden;
+  justify-content: space-between;
+  flex-wrap: unset;
+}
+
+.btn {
+  position: relative;
+  transition: color 0.15s, background-color 0.15s, border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #3d5671;
+  border-color: #3d5671;
+}
+.btn-square {
+  border-radius: 0 !important;
+}
+.btn {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+a,
+button,
+.btn {
+  outline: none !important;
+}
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+.me-2 {
+  margin-right: 0.5rem !important;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #495057;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s, background-color 0.15s, border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.mindata {
+  min-width: 70px;
+  color: #fff;
+  background-color: #3d5671;
+  border-color: #3d5671;
+}
+
+.mindata:hover {
+  background-color: #b81f44;
+  transition: all 0.2s;
+}
+
+.line {
+  width: 100%;
+  height: 1rem;
+  background-color: #eee;
+}
+
+.card1 {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  border-width: 0;
+  transition: all 0.2s;
+  height: 100vh;
+}
+
+/* checkbox */
+.app-page-pannel-body-cointitle {
+  width: 100%;
+  padding: 15px;
+  border-bottom: 1px solid;
+  border-bottom-color: #eee;
+  position: relative;
+}
+
+.myContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon1 {
+  font-size: 25px !important;
+  margin-left: 10px;
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.inputdata {
+  outline: none;
+  border: none;
+  padding: 10px;
+}
+
+.rightContainerInput {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 7px;
+}
+
+.app-page-pannel-body-coinlist-item {
+  padding: 15px 25px 0px;
+}
+
+.app-page-pannel-body-coinlist-item-title {
+  padding-bottom: 12px;
+}
+
+.app-page-pannel-body-coinlist-item-icon {
+  height: 40px;
+  width: 40px;
+}
+
+.app-page-pannel-body-coinlist-item-name {
+  margin-left: 0.8rem;
+  color: #3e69d7;
+}
+
+.app-page-pannel-body-coinlist-item-vaild {
+  width: 33%;
+  float: left;
+  text-align: left;
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.app-page-pannel-body-coinlist-item-freeze {
+  width: 33%;
+  float: left;
+  text-align: center;
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.app-page-pannel-body-coinlist-item-exchange {
+  width: 33%;
+  float: left;
+  text-align: right;
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.app-page-pannel-body-coinlist-item::after {
+  content: "";
+  width: 90%;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(239, 239, 239, 1);
+}
+
+/* marque */
+.cg-containerlarge {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid gray;
+
+}
+
+.cg-marquee {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+.cg-marquee-content-1 {
+  display: inline-block;
+  padding-left: 0%;
+  animation: marquee 30s linear infinite;
+}
+
+.cg-flex-row {
+  flex-direction: row;
+}
+
+.coin-logo {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+
+/*  */
+
+
+.coin-info {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.coin-logo {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.coin-price {
+  font-size: 16px;
+  margin-left: 5px;
+  vertical-align: middle;
+  color: gray;
+}
+
+
+a{
+  text-decoration: none;
+  
+}

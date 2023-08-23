@@ -1,0 +1,125 @@
+.app_exchange_coin_panel {
+  width: 100%;
+  border: 1px solid;
+  border-color: #eee;
+  height: 112px;
+}
+
+.app_exchange_coin_select {
+  width: 80%;
+  float: left;
+}
+
+.dataapp {
+  border-bottom: 1px solid rgb(241, 241, 241);
+  border-top-color: rgb(241, 241, 241);
+  border-right-color: rgb(241, 241, 241);
+  border-left-color: rgb(241, 241, 241);
+}
+
+.app_exchange_coin_info {
+  height: 54px;
+  padding: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  background: green;
+  margin-right: 10px;
+  width: 14px;
+  height: 14px;
+  border-radius: 20px;
+  border: 2px solid;
+  border-color: #fff;
+}
+
+.dotred {
+  background: red;
+  margin-right: 10px;
+  width: 14px;
+  height: 14px;
+  border-radius: 20px;
+  border: 2px solid;
+  border-color: #fff;
+}
+
+.app_exchange_coin_info_tag {
+  margin-right: 25px;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.app_exchange_coin_transfer {
+  width: 20%;
+  float: left;
+  height: 100%;
+  background: #f3f3f3;
+  position: relative;
+  font-size: 23px;
+}
+
+.app_exchange_coin_transfer div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 100px;
+  padding: 5px;
+}
+
+.line-height-50px {
+  line-height: 50px;
+  height: 50px;
+}
+
+.form-control {
+  width: 90%;
+  outline: none;
+  border: 1px solid #888;
+  padding: 13px;
+}
+
+.form-control::placeholder {
+  font-size: 1rem;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.p1 {
+  color: #888;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.app_exchange_order_info {
+  margin-top: 15px;
+  width: 100%;
+  background: #f6f6f6;
+  padding: 15px;
+  border-radius: 5px;
+  color: #99a6af;
+  font-size: 1.1rem;
+  height: 70px;
+  line-height: 22px;
+}
+
+.bottom-button {
+  background: rgb(68, 110, 155);
+  width: 60%;
+  line-height: 40px;
+  position: absolute;
+  left: 50%;
+  /* top: 50%; */
+  bottom: 20%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}

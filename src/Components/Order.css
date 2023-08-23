@@ -1,0 +1,101 @@
+.MuiTabs-flexContainer {
+  display: flex !important;
+  justify-content: flex-start !important;
+}
+
+.MuiTabs-indicator {
+  background-color: blue !important;
+}
+
+.css-19kzrtu {
+  padding: 0px !important;
+}
+
+.MuiTypography-root {
+  margin-top: -30px !important;
+  padding: 0px 20px;
+}
+
+.text-grey {
+  color: #adadad !important;
+}
+
+.card {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  border-width: 0;
+  transition: all 0.2s;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(26, 54, 126, 0.125);
+  border-radius: 0.6rem;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+}
+
+.app_record_item {
+  margin-bottom: 5px;
+  display: flex;
+  font-size: 1rem;
+}
+
+.float-left {
+  float: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.app-myaccount-income-record-more {
+  text-align: center;
+  color: #999;
+}
+
+.text-primary {
+  color: #3f6ad8 !important;
+}
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.text-success {
+  color: #3ac47d !important;
+}
+
+.norecord1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
+}
+
+.text-danger {
+  color: #446e9b !important;
+}

@@ -1,0 +1,74 @@
+.form-label {
+  margin-bottom: 0.5rem;
+  color: #aaa;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.form-login {
+  border: 0;
+  display: block;
+  line-height: 2;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.btn-sendcode {
+  position: absolute !important;
+  right: 0px;
+  font-size: 16px;
+  color: #aaa;
+  z-index: 51 !important;
+  height: 100%;
+  line-height: 4;
+}
+
+.btn.btn-pill {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.input-group .btn {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #446e9b;
+  border-color: #446e9b;
+}
+
+.btn {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.bottom-grid {
+  position: fixed;
+  bottom: 40%;
+  width: 100%;
+  height: 70px;
+  background: #fff;
+  left: 0;
+}
+
+.btn-eye {
+  position: absolute !important;
+  right: 0px;
+  font-size: 1.5rem;
+  color: #aaa;
+  z-index: 51 !important;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  line-height: 2;
+}

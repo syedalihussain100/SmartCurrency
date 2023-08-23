@@ -1,0 +1,163 @@
+.content-body {
+  padding: 10px;
+  word-break: break-word;
+  margin-top: 50px;
+}
+
+.card.mb-3 {
+  margin-bottom: 1.5rem !important;
+}
+
+.card {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  border-width: 0;
+  transition: all 0.2s;
+}
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(26, 54, 126, 0.125);
+  border-radius: 0.6rem;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+}
+
+.min-height-350 {
+  min-height: 350px;
+}
+
+.app-page-pannel-body-coinlist-item2 {
+  padding-bottom: 30px;
+}
+
+.app-page-pannel-body-coinlist-item-title {
+  padding-bottom: 12px;
+}
+
+.app-page-pannel-body-coinlist-item-icon {
+  height: 45px;
+  width: 45px;
+}
+
+.app-page-pannel-body-coinlist-item-name {
+  margin-left: 0.8rem;
+  color: #3e69d7;
+  font-size: 1.2rem;
+}
+
+.app-page-pannel-body-coinlist-item-vaild {
+  width: 33%;
+  float: left;
+  text-align: left;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.app-page-pannel-body-coinlist-item-vaild-name {
+  font-size: 1rem;
+}
+
+.app-page-pannel-body-coinlist-item-vaild-value {
+  font-size: 1rem;
+  margin-top: 2px;
+}
+
+.app-page-pannel-body-coinlist-item-freeze {
+  width: 33%;
+  float: left;
+  text-align: center;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.app-page-pannel-body-coinlist-item-exchange {
+  width: 33%;
+  float: left;
+  text-align: right;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+
+.app_record_item {
+  margin-bottom: 5px;
+  display: flex;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.float-left {
+  float: left;
+}
+
+.width-30 {
+  width: 30%;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.width-40 {
+  width: 40%;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-success {
+  color: #3ac47d !important;
+}
+
+.rounded {
+  border-radius: 0.25rem !important;
+}
+
+.bg-primary {
+  background-color: #3f6ad8 !important;
+}
+.text-white {
+  color: #fff !important;
+}
+.text-nowrap {
+  white-space: nowrap !important;
+}
+.fw-bold {
+  font-weight: 700 !important;
+}
+.fs-7 {
+  font-size: 0.68rem !important;
+}
+.p-1 {
+  padding: 0.25rem !important;
+}
+
+.app-myaccount-income-record-more {
+    text-align: center;
+    color: #999;
+    font-size: 1.2rem;
+}

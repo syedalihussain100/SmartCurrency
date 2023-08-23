@@ -1,0 +1,213 @@
+.staking_bg {
+  background-color: #446e9b;
+  height: 100vw;
+  width: 100%;
+}
+
+
+
+.myt {
+  padding: 20px 20px;
+}
+
+.my {
+  margin: 0px 20px;
+}
+
+.card.mb-3 {
+  margin-bottom: 1.5rem !important;
+}
+
+.BG-color {
+  background: rgb(68, 110, 155) !important;
+}
+
+.card {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  border-width: 0;
+  transition: all 0.2s;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(26, 54, 126, 0.125);
+  border-radius: 0.6rem;
+}
+
+.card-body2 {
+  flex: 1 1 auto;
+  padding: 0.6rem 1rem;
+}
+
+.miningpool-header-bg {
+  position: absolute;
+  bottom: 0;
+  height: 76px;
+  background: rgba(255, 255, 255, 0.06);
+  width: 100%;
+  left: 0;
+}
+
+.line-height-35px {
+  line-height: 35px;
+  height: 35px;
+}
+
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.line-height-35px {
+  line-height: 35px;
+  height: 35px;
+}
+
+.fs-1 {
+  font-size: calc(1.345rem + 1.14vw) !important;
+}
+
+.app_asset_header_value_usdt {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin-left: 0.5rem;
+}
+
+.fs-7 {
+  font-size: 1rem !important;
+}
+
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.float-left {
+  float: left;
+}
+
+.width-33 {
+  width: 33%;
+}
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+/* second PArt css */
+
+.card.mb-3 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+.card {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  border-width: 0;
+  transition: all 0.2s;
+  border-radius: 10px;
+}
+
+.MuiTabs-flexContainer {
+  display: flex !important;
+  justify-content: space-around !important;
+  align-items: center !important;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #446e9b;
+}
+
+.MuiTabs-indicator {
+  background-color: red !important;
+}
+
+.norecord {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.icon-ic_list_emipty_image0 {
+  width: 60px;
+  height: 60px;
+}
+
+.icon-ic_list_emipty_text {
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  color: #999;
+}
+
+.app_mining_pannel_list {
+  margin-top: 8px;
+  min-height: 300px;
+}
+
+.app_mining_pannel {
+  position: relative;
+  min-height: 97px;
+  border-bottom: 1px solid;
+  border-bottom-color: #eee;
+  border-width: 95%;
+  font-size: 0.75rem;
+  margin-top: 0px;
+  color: #999;
+  line-height: 23px;
+}
+
+.py-2 {
+  padding-top: 0.8rem !important;
+  padding-bottom: 0.8rem !important;
+}
+
+.rounded {
+  border-radius: 0.25rem !important;
+}
+
+.bg-primary {
+  background-color: #3f6ad8 !important;
+}
+.text-white {
+  color: #fff !important;
+}
+.fw-bold {
+  font-weight: 700 !important;
+}
+.fs-7 {
+  font-size: 1rem !important;
+  margin: "0px 4px";
+}
+.p-1 {
+  padding: 0.25rem !important;
+}
