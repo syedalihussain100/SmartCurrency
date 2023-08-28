@@ -12,7 +12,10 @@ import Header from "../Components/Header";
 import Marquee from "react-fast-marquee";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { sendEmailVerification, onAuthStateChanged } from "firebase/auth";
+import {
+  sendEmailVerification,
+  onAuthStateChanged,
+} from "firebase/auth";
 import { auth } from "./config/firebase";
 
 const Home = () => {
@@ -20,6 +23,8 @@ const Home = () => {
   const [coinData, setCoinData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
+
+
 
   useEffect(() => {
     const fetchCoinData = async () => {
@@ -85,6 +90,7 @@ const Home = () => {
     }
   };
 
+
   return (
     <>
       <Header />
@@ -92,13 +98,19 @@ const Home = () => {
       <div style={{ textAlign: "center", marginBottom: "20px" }}>
         {user && !user.emailVerified ? (
           <div>
-            <p style={{marginBottom:"5px"}}>
+            <p style={{ marginBottom: "5px", color: "red" }}>
               Your email is not verified yet. Click the button below to send a
               verification email.
             </p>
             <button
               onClick={sendVerificationEmail}
-              style={{ backgroundColor: "#446e9b",color:"#fff",padding:"10px 20px",borderRadius:"50px" }}
+              style={{
+                backgroundColor: "#446e9b",
+                color: "#fff",
+                padding: "12px 20px",
+                borderRadius: "50px",
+                fontSize: "1rem",
+              }}
             >
               Send Verification Email
             </button>

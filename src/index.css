@@ -110,3 +110,13 @@ body {
   border-radius: 50px;
   cursor: pointer;
 }
+
+.PhoneInputInput{
+ padding: 10px !important;
+}
+
+
+.captcha{
+  position: relative;
+  z-index: 100;
+}

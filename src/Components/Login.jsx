@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import PropTypes from "prop-types";
@@ -15,6 +15,10 @@ import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import { useUserAuth } from "../context/UserAuthContext";
+import "react-phone-number-input/style.css";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { auth } from "./config/firebase";
 
 // Custom Pannel here
 function CustomTabPanel(props) {
@@ -57,6 +61,12 @@ const Login = () => {
   const navigate = useNavigate();
   const [value, setValue] = React.useState(0);
   const [showPassword, setShowPassword] = React.useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [ottp, setOttp] = useState("");
+  const [flag, setFlag] = useState(false);
+  const [confirmObj, setConfirmObj] = useState("");
+  // const ref = useRef();
+
   const { logIn } = useUserAuth();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -81,6 +91,61 @@ const Login = () => {
     setEmail("");
     SetPassword("");
   };
+
+  const generateRecaptcha = () => {
+    window.recaptchaVerifier = new RecaptchaVerifier(
+      auth,
+      "recaptcha-container",
+      {
+        size: "invisible",
+        callback: (response) => {
+          // reCAPTCHA solved, allow signInWithPhoneNumber.
+        },
+      },
+      auth
+    );
+  };
+
+  //  get ottp
+
+  const handleSubmitgetOttp = (e) => {
+    e.preventDefault();
+
+    if (phoneNumber.length >= 12) {
+      generateRecaptcha();
+      let appVerifier = window.recaptchaVerifier;
+      signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+        .then((confirmationResult) => {
+          window.confirmationResult = confirmationResult;
+          console.log(confirmationResult);
+          setConfirmObj(confirmationResult);
+          setFlag(true);
+        })
+        .catch((error) => {
+          console.log(error);
+          setError(error?.message);
+        });
+    }
+  };
+
+  // verify ottp
+  const VerifyOttp = async (e) => {
+    e.preventDefault();
+
+    try {
+      setError("");
+      if (ottp === "" || ottp === null) return;
+      await confirmObj.confirm(ottp);
+      navigate(`/`);
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  // ref
+  // useEffect(() => {
+  //   ref.current.focus();
+  // }, []);
 
   return (
     <>
@@ -243,21 +308,76 @@ const Login = () => {
             >
               Phone number
             </label>
-            <FormControl
+
+            <h3> {flag ? "Verfication code" : "Whats your Number?"}</h3>
+
+            <p>
+              {" "}
+              {flag
+                ? "Please enter the 5-digit code sent to"
+                : "We’ll send you a OTP to verify your idenity"}
+            </p>
+            <form
+              onSubmit={handleSubmitgetOttp}
+              style={{ display: !flag ? "block" : "none" }}
+            >
+              <PhoneInput
+                international
+                countryCallingCodeEditable={false}
+                defaultCountry="PK"
+                placeholder="Enter Phone Number"
+                value={phoneNumber}
+                onChange={setPhoneNumber}
+                error={
+                  phoneNumber
+                    ? isValidPhoneNumber(phoneNumber)
+                      ? undefined
+                      : "Invalid phone number"
+                    : "Phone number required"
+                }
+              />
+              <div id="recaptcha-container" className="captcha"></div>
+              <button type="submit">Send Otp</button>
+            </form>
+
+            {error && <p>{error}</p>}
+
+            <form
+              onSubmit={VerifyOttp}
+              style={{ display: flag ? "block" : "none" }}
+            >
+              <input
+                type="text"
+                // ref={ref}
+                placeholder="Enter Your Ottp Code"
+                value={ottp}
+                onChange={(e) => setOttp(e.target.value)}
+              />
+              <div>
+                <button
+                  // className="bg-[#FFDE59] p-2 w-60 rounded-md text-sm"
+                  type="submit"
+                >
+                  Verify Ottp
+                </button>
+              </div>
+            </form>
+
+            {/* <FormControl
               sx={{ width: "100%", marginBottom: "10px" }}
               variant="outlined"
             >
               <InputLabel htmlFor="outlined-adornment-password">
-                Please enter phone number
+                Phone Number
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-password"
-                type="number"
-                label="Please enter phone number"
+                type="tel"
+                label="Phone Number"
               />
-            </FormControl>
+            </FormControl> */}
 
-            <label
+            {/* <label
               htmlFor="Loginpassword"
               className="form-label"
               style={{ fontSize: "18px" }}
@@ -292,9 +412,9 @@ const Login = () => {
                 }
                 label="Please enter password"
               />
-            </FormControl>
+            </FormControl> */}
 
-            <div
+            {/* <div
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -306,12 +426,14 @@ const Login = () => {
                 style={{ height: "20px", width: "20px" }}
               />
               <span style={{ marginLeft: "15px" }}>Keep me logged in</span>
-            </div>
+            </div> */}
 
-            <div className="registerbtn_Container">
-              <div className="register_btn">Login</div>
-            </div>
-            <p
+            {/* <div className="registerbtn_Container">
+              <div className="register_btn">
+                Send Verfication Code
+              </div>
+            </div> */}
+            {/* <p
               style={{
                 textAlign: "right",
                 position: "relative",
@@ -320,7 +442,7 @@ const Login = () => {
               onClick={() => navigate("/forget-password")}
             >
               forget password?
-            </p>
+            </p> */}
           </div>
         </CustomTabPanel>
       </Box>
