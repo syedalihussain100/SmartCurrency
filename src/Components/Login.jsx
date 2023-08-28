@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import PropTypes from "prop-types";
@@ -14,6 +14,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
+import { useUserAuth } from "../context/UserAuthContext";
 
 // Custom Pannel here
 function CustomTabPanel(props) {
@@ -50,9 +51,13 @@ function a11yProps(index) {
 }
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, SetPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const [value, setValue] = React.useState(0);
   const [showPassword, setShowPassword] = React.useState(false);
+  const { logIn } = useUserAuth();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -62,6 +67,19 @@ const Login = () => {
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
+  };
+
+  const handleSubmit = async () => {
+    try {
+      await logIn(email, password);
+      navigate("/");
+      console.log("Login Successfully!");
+    } catch (error) {
+      setError(error.message);
+    }
+
+    setEmail("");
+    SetPassword("");
   };
 
   return (
@@ -113,6 +131,8 @@ const Login = () => {
                 Please input the email address
               </InputLabel>
               <OutlinedInput
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 id="outlined-adornment-password"
                 type="email"
                 label="Please input the email address"
@@ -134,6 +154,8 @@ const Login = () => {
                 Please enter password
               </InputLabel>
               <OutlinedInput
+                value={password}
+                onChange={(e) => SetPassword(e.target.value)}
                 id="outlined-adornment-password"
                 type={showPassword ? "text" : "password"}
                 endAdornment={
@@ -170,10 +192,24 @@ const Login = () => {
               <span style={{ marginLeft: "15px" }}>Keep me logged in</span>
             </div>
 
+            {error && (
+              <p
+                style={{
+                  textAlign: "center",
+                  color: "red",
+                  fontSize: "1.2rem",
+                }}
+              >
+                {error}
+              </p>
+            )}
+
             <div className="registerbtn_Container">
-              <div className="register_btn">Login</div>
+              <div className="register_btn" onClick={handleSubmit}>
+                Login
+              </div>
             </div>
-            <p
+            {/* <p
               onClick={() => navigate("/register")}
               style={{
                 textAlign: "left",
@@ -183,7 +219,7 @@ const Login = () => {
               }}
             >
               Register here!
-            </p>
+            </p> */}
 
             <p
               style={{

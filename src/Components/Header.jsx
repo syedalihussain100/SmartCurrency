@@ -26,9 +26,12 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { BsServer } from "react-icons/bs";
 import { BiHome, BiRotateRight } from "react-icons/bi";
+import { useUserAuth } from "../context/UserAuthContext";
 
 const Header = () => {
   const navigate = useNavigate();
+  const { logOut, user } = useUserAuth();
+
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -91,7 +94,9 @@ const Header = () => {
           </ListItem>
         ))}
       </List>
-      <button className="logout">Logout</button>
+      {user &&   <button className="logout" onClick={logOut}>
+        Logout
+      </button>}
     </Box>
   );
 
@@ -200,7 +205,6 @@ const Header = () => {
               >
                 This is a system notification
               </span>
-            
             </marquee>
           </div>
         </header>

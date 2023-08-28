@@ -11,10 +11,15 @@ import Six from "./6.png";
 import Header from "../Components/Header";
 import Marquee from "react-fast-marquee";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { sendEmailVerification, onAuthStateChanged } from "firebase/auth";
+import { auth } from "./config/firebase";
 
 const Home = () => {
+  const navigate = useNavigate();
   const [coinData, setCoinData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const fetchCoinData = async () => {
@@ -56,9 +61,54 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log("Auth", currentUser);
+      setUser(currentUser);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  const sendVerificationEmail = async () => {
+    if (user) {
+      try {
+        await sendEmailVerification(user);
+        console.log("Verification email sent.");
+      } catch (error) {
+        console.error("Error sending verification email:", error);
+      }
+    } else {
+      console.warn("User is not authenticated.");
+    }
+  };
+
   return (
     <>
       <Header />
+
+      <div style={{ textAlign: "center", marginBottom: "20px" }}>
+        {user && !user.emailVerified ? (
+          <div>
+            <p style={{marginBottom:"5px"}}>
+              Your email is not verified yet. Click the button below to send a
+              verification email.
+            </p>
+            <button
+              onClick={sendVerificationEmail}
+              style={{ backgroundColor: "#446e9b",color:"#fff",padding:"10px 20px",borderRadius:"50px" }}
+            >
+              Send Verification Email
+            </button>
+          </div>
+        ) : (
+          <>
+            {user && user.emailVerified ? <p>Your email is verified.</p> : null}
+          </>
+        )}
+      </div>
       <div className="container">
         <h4 className="title">staking list</h4>
         <p className="titleP">Welcome to the Solunapower Platform (SOLU).</p>
@@ -135,7 +185,10 @@ const Home = () => {
             <span className="app_mining_pannel_commission">
               1% / <span trans="home_mining_per_day">day</span>
             </span>
-            <button className="btn-pinkred app_mining_pannel_join">
+            <button
+              className="btn-pinkred app_mining_pannel_join"
+              onClick={() => navigate("/solustake")}
+            >
               Start
             </button>
             {/*  */}

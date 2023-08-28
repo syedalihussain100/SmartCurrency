@@ -34,37 +34,60 @@ import DownloadApp from "./Components/DownloadApp";
 import ForgetPassword from "./Components/forgetPassword";
 import Register from "./Components/Register";
 import Payment from "./Components/Payment";
+import SOLUStake from "./Components/SOLUStake";
+import { UserAuthContext } from "./context/UserAuthContext";
+import ProtectedRoute from "./Components/Protected/ProtectedRoute";
 
 
 
 
 function App() {
   return (
-    <>
+    <UserAuthContext>
       <BrowserRouter >
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/trade" element={<Trade />} />
-          <Route path="/staking" element={<Staking />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/assets" element={<Assets />} />
-          <Route path="/rules" element={<Rules />} />
-          <Route path="/deposite" element={<Deposite />} />
-          <Route path="/withdraw" element={<WithDraw />} />
-          <Route path="/swap" element={<Swap />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/viewtext" element={<ViewText />} />
-          <Route path="/viewsolo" element={<ViewSolo />} />
-          <Route path="/withdrawusdt" element={<WithDrawUsdt />} />
-          <Route path="/withdrawsolo" element={<WithDrawSolo />} />
-          <Route path="/depositeusdt" element={<DepositeUsdt />} />
-          <Route path="/depositesolu" element={<DepositeSolu />} />
-          <Route path="/license" element={<License />} />
-          <Route path="/customer" element={<CustomerService />} />
-          <Route path="/securitycenter" element={<SecurityCenter />} />
-          <Route path="/withdrawl" element={<WithDrawl />} />
-          <Route path="/language" element={<Language />} />
-          <Route path="/verifyphone" element={<VerifyPhone />} />
+          <Route path="/trade" element={<ProtectedRoute><Trade /></ProtectedRoute>} />
+          <Route path="/staking" element={<ProtectedRoute><Staking /></ProtectedRoute>} />
+          <Route path="/team" element={<ProtectedRoute><Team /></ProtectedRoute>} />
+          <Route path="/assets" element={<ProtectedRoute><Assets /></ProtectedRoute>} />
+          <Route path="/rules" element={<ProtectedRoute>
+            <Rules />
+          </ProtectedRoute>} />
+          <Route path="/deposite" element={<ProtectedRoute><Deposite /></ProtectedRoute>} />
+          <Route path="/withdraw" element={<ProtectedRoute><WithDraw /></ProtectedRoute>} />
+          <Route path="/swap" element={<ProtectedRoute><Swap /></ProtectedRoute>} />
+          <Route path="/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>} />
+          <Route path="/viewtext" element={<ProtectedRoute>
+            <ViewText />
+          </ProtectedRoute>} />
+          <Route path="/viewsolo" element={<ProtectedRoute>
+            <ViewSolo />
+          </ProtectedRoute>} />
+          <Route path="/withdrawusdt" element={<ProtectedRoute>
+            <WithDrawUsdt />
+          </ProtectedRoute>} />
+          <Route path="/withdrawsolo" element={<ProtectedRoute>
+            <WithDrawSolo />
+          </ProtectedRoute>} />
+          <Route path="/depositeusdt" element={<ProtectedRoute>
+            <DepositeUsdt />
+          </ProtectedRoute>} />
+          <Route path="/depositesolu" element={<ProtectedRoute>
+            <DepositeSolu />
+          </ProtectedRoute>} />
+          <Route path="/license" element={<ProtectedRoute><License /></ProtectedRoute>} />
+          <Route path="/customer" element={<ProtectedRoute><CustomerService /></ProtectedRoute>} />
+          <Route path="/securitycenter" element={<ProtectedRoute>
+            <SecurityCenter />
+          </ProtectedRoute>} />
+          <Route path="/withdrawl" element={<ProtectedRoute>
+            <WithDrawl />
+          </ProtectedRoute>} />
+          <Route path="/language" element={<ProtectedRoute><Language /></ProtectedRoute>} />
+          <Route path="/verifyphone" element={
+            <VerifyPhone />
+          } />
           <Route path="/modifyphone" element={<ModifyPhone />} />
           <Route path="/modifyemail" element={<ModifyEmail />} />
           <Route path="/change-password" element={<ChangePassword />} />
@@ -72,12 +95,17 @@ function App() {
           <Route path="/downloadapp" element={<DownloadApp />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/payment" element={<ProtectedRoute>
+            <Payment />
+          </ProtectedRoute>} />
           <Route element={<Login />} path="/login" />
+          <Route element={<ProtectedRoute>
+            <SOLUStake />
+          </ProtectedRoute>} path="/solustake" />
         </Routes>
         <Bottom />
       </BrowserRouter>
-    </>
+    </UserAuthContext>
   );
 }
 

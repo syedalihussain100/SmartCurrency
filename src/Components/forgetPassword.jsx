@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
@@ -10,6 +10,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
+
 
 // Custom Pannel here
 function CustomTabPanel(props) {
@@ -46,6 +47,7 @@ function a11yProps(index) {
 }
 
 const ForgetPassword = () => {
+
   const navigate = useNavigate();
   const [value, setValue] = React.useState(0);
 
@@ -60,6 +62,7 @@ const ForgetPassword = () => {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
 
   return (
     <>
@@ -81,6 +84,7 @@ const ForgetPassword = () => {
           </h3>
         </div>
       </div>
+
 
       {/*  */}
 
@@ -205,7 +209,7 @@ const ForgetPassword = () => {
               variant="outlined"
             >
               <InputLabel htmlFor="outlined-adornment-password">
-              Please enter the password again
+                Please enter the password again
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-password"
@@ -245,7 +249,7 @@ const ForgetPassword = () => {
               className="form-label"
               style={{ fontSize: "18px" }}
             >
-             Phone number   
+              Phone number
             </label>
             <FormControl
               sx={{ width: "100%", marginBottom: "10px" }}
@@ -346,7 +350,7 @@ const ForgetPassword = () => {
               variant="outlined"
             >
               <InputLabel htmlFor="outlined-adornment-password">
-              Please enter the password again
+                Please enter the password again
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-password"

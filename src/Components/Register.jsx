@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import {
@@ -10,8 +10,17 @@ import {
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { useUserAuth } from "../context/UserAuthContext";
+import { db } from "./config/firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 const Register = () => {
+  const [email, SetEmail] = useState("");
+  const [name, SetName] = useState("");
+  const [address, SetAddress] = useState("");
+  const [password, SetPassword] = useState("");
+  const [error, setError] = useState("");
+  const { signUp } = useUserAuth();
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = React.useState(false);
@@ -20,6 +29,36 @@ const Register = () => {
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
+  };
+
+  const submitBtn = async () => {
+    let obj = {
+      email,
+      name,
+      address,
+      password,
+    };
+
+    try {
+      await signUp(email, password);
+      console.log("User Register Successfully!");
+      navigate("/");
+      const docRef = await addDoc(collection(db, "users"), {
+        email: email,
+        name: name,
+        address: address,
+      });
+
+      console.log("Document written with ID: ", docRef.id);
+    } catch (error) {
+      setError(error.message);
+    }
+
+    console.log("data submited here", obj);
+    SetEmail("");
+    SetName("");
+    SetAddress("");
+    SetPassword("");
   };
 
   return (
@@ -60,6 +99,8 @@ const Register = () => {
             Please input the email address
           </InputLabel>
           <OutlinedInput
+            value={email}
+            onChange={(e) => SetEmail(e.target.value)}
             id="outlined-adornment-password"
             type="email"
             label="Please input the email address"
@@ -82,6 +123,8 @@ const Register = () => {
             Please enter your name
           </InputLabel>
           <OutlinedInput
+            value={name}
+            onChange={(e) => SetName(e.target.value)}
             id="outlined-adornment-password"
             type="text"
             label="Please enter your name"
@@ -104,6 +147,8 @@ const Register = () => {
             Please enter your address
           </InputLabel>
           <OutlinedInput
+            value={address}
+            onChange={(e) => SetAddress(e.target.value)}
             id="outlined-adornment-password"
             type="text"
             label="Please enter your address"
@@ -126,6 +171,8 @@ const Register = () => {
             Please enter a password
           </InputLabel>
           <OutlinedInput
+            value={password}
+            onChange={(e) => SetPassword(e.target.value)}
             id="outlined-adornment-password"
             type={showPassword ? "text" : "password"}
             endAdornment={
@@ -147,9 +194,15 @@ const Register = () => {
             label="Please enter a password"
           />
         </FormControl>
-
+        {error && (
+          <p style={{ textAlign: "center", color: "red", fontSize: "1.2rem" }}>
+            {error}
+          </p>
+        )}
         <div className="registerbtn_Container">
-          <div className="register_btn">Register</div>
+          <div className="register_btn" onClick={submitBtn}>
+            Register
+          </div>
         </div>
       </div>
     </>
