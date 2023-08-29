@@ -120,3 +120,16 @@ body {
   position: relative;
   z-index: 100;
 }
+
+
+.registerbtn__Container{
+  margin: 20px 0px;
+}
+
+
+.forget__container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+cursor: pointer;
+}

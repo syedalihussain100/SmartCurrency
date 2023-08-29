@@ -264,34 +264,18 @@ const Login = () => {
               </p>
             )}
 
-            <div className="registerbtn_Container">
+            <div className="registerbtn__Container">
               <div className="register_btn" onClick={handleSubmit}>
                 Login
               </div>
             </div>
-            {/* <p
-              onClick={() => navigate("/register")}
-              style={{
-                textAlign: "left",
-                position: "relative",
-                top: "-165px",
-                cursor: "pointer",
-              }}
-            >
-              Register here!
-            </p> */}
 
-            <p
-              style={{
-                textAlign: "right",
-                position: "relative",
-                top: "-180px",
-                cursor: "pointer",
-              }}
-              onClick={() => navigate("/forget-password")}
-            >
-              forget password?
-            </p>
+            <div className="forget__container">
+              <div onClick={()=> navigate("/register")}>Register here</div>
+              <div onClick={()=> navigate("/forget-password")}>Forget Password</div>
+            </div>
+
+           
           </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
@@ -306,9 +290,9 @@ const Login = () => {
               </label>
             ) : null}
 
-            <h3> {flag ? "Verfication code" : "Whats your Number?"}</h3>
+            <h3 style={{margin:"10px 0px"}}> {flag ? "Verfication code" : "Whats your Number?"}</h3>
 
-            <p>
+            <p style={{margin:"10px 0px"}}>
               {" "}
               {flag
                 ? "Please enter the 5-digit code sent to"
@@ -334,7 +318,7 @@ const Login = () => {
                 }
               />
               <div id="recaptcha-container" className="captcha"></div>
-              <button type="submit">Send Otp</button>
+              <button type="submit" style={{background:"#446e9b",color:"#fff",padding:"10px 15px",cursor:"pointer",marginTop:"10px",textAlign:"center"}}>Send Otp</button>
             </form>
 
             {error && <p>{error}</p>}
@@ -346,12 +330,14 @@ const Login = () => {
               <input
                 type="text"
                 // ref={ref}
+                style={{width:"100%",padding:"10px",outline:"none"}}
                 placeholder="Enter Your Ottp Code"
                 value={ottp}
                 onChange={(e) => setOttp(e.target.value)}
               />
               <div>
                 <button
+                style={{background:"#446e9b",padding:"10px 15px",color:"white",marginTop:"10px"}}
                   // className="bg-[#FFDE59] p-2 w-60 rounded-md text-sm"
                   type="submit"
                 >

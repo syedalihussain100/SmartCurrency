@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Tab, Tabs, Typography } from "@mui/material";
 import PropTypes from "prop-types";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
+// import Visibility from "@mui/icons-material/Visibility";
+// import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import FormControl from "@mui/material/FormControl";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import IconButton from "@mui/material/IconButton";
+// import InputAdornment from "@mui/material/InputAdornment";
+// import IconButton from "@mui/material/IconButton";
 import { auth } from "./config/firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
 
@@ -53,17 +53,17 @@ const ForgetPassword = () => {
   const [email, setEmail] = useState("");
   const [resetSent, setResetSent] = useState(false);
 
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
 
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  // const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
+  // const handleMouseDownPassword = (event) => {
+  //   event.preventDefault();
+  // };
 
   const handleResetPassword = async () => {
     try {
@@ -106,7 +106,6 @@ const ForgetPassword = () => {
             aria-label="basic tabs example"
           >
             <Tab label="Email Reset Password" {...a11yProps(0)} />
-            <Tab label="Mobile phone verification" {...a11yProps(1)} />
           </Tabs>
         </Box>
 
@@ -152,9 +151,9 @@ const ForgetPassword = () => {
             )}
           </div>
         </CustomTabPanel>
-        <CustomTabPanel value={value} index={1}>
+        {/* <CustomTabPanel value={value} index={1}>
           <div className="content-body position-relative">
-            {/*  */}
+       
             <label
               htmlFor="Loginpassword"
               className="form-label"
@@ -175,7 +174,7 @@ const ForgetPassword = () => {
                 label=" Please enter phone number"
               />
             </FormControl>
-            {/*  */}
+           
             <label
               htmlFor="Loginpassword"
               className="form-label"
@@ -208,7 +207,7 @@ const ForgetPassword = () => {
                 label="Please enter a verification code"
               />
             </FormControl>
-            {/*  */}
+       
 
             <label
               htmlFor="Loginpassword"
@@ -247,7 +246,7 @@ const ForgetPassword = () => {
               />
             </FormControl>
 
-            {/*  */}
+          
             <label
               htmlFor="Loginpassword"
               className="form-label"
@@ -286,13 +285,13 @@ const ForgetPassword = () => {
               />
             </FormControl>
 
-            {/* end */}
+     
 
             <div className="registerbtn_Container">
               <div className="register_btn">Confirm</div>
             </div>
           </div>
-        </CustomTabPanel>
+        </CustomTabPanel> */}
       </Box>
     </>
   );

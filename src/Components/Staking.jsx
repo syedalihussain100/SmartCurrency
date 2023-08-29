@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Image from "./image.png";
 import DocuImg from "./document.png";
+import { useNavigate } from "react-router-dom";
 
 const TabPanel = ({ children, value, index }) => {
   return (
@@ -20,6 +21,7 @@ const TabPanel = ({ children, value, index }) => {
 };
 
 const Staking = () => {
+  const navigate = useNavigate();
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -63,7 +65,7 @@ const Staking = () => {
       </div>
       {/* Second Part here */}
       <div className="main-card mb-3 card my">
-        <div className="card" >
+        <div className="card">
           <div>
             <Tabs
               value={value}
@@ -101,7 +103,10 @@ const Staking = () => {
                 <span className="app_mining_pannel_commission">
                   1% / <span trans="home_mining_per_day">day</span>
                 </span>
-                <button className="btn-pinkred app_mining_pannel_join">
+                <button
+                  className="btn-pinkred app_mining_pannel_join"
+                  onClick={() => navigate(`/solustake1`)}
+                >
                   Start
                 </button>
                 {/*  */}
@@ -138,7 +143,10 @@ const Staking = () => {
                 <span className="app_mining_pannel_commission">
                   1% / <span trans="home_mining_per_day">day</span>
                 </span>
-                <button className="btn-pinkred app_mining_pannel_join">
+                <button
+                  className="btn-pinkred app_mining_pannel_join"
+                  onClick={() => navigate(`/solustake2`)}
+                >
                   Start
                 </button>
                 {/*  */}
@@ -174,7 +182,10 @@ const Staking = () => {
                 <span className="app_mining_pannel_commission">
                   1% / <span trans="home_mining_per_day">day</span>
                 </span>
-                <button className="btn-pinkred app_mining_pannel_join">
+                <button
+                  className="btn-pinkred app_mining_pannel_join"
+                  onClick={() => navigate(`/solustake3`)}
+                >
                   Start
                 </button>
                 {/*  */}
@@ -210,7 +221,10 @@ const Staking = () => {
                 <span className="app_mining_pannel_commission">
                   10% / <span trans="home_mining_per_day">day</span>
                 </span>
-                <button className="btn-pinkred app_mining_pannel_join">
+                <button
+                  className="btn-pinkred app_mining_pannel_join"
+                  onClick={() => navigate(`/solustake4`)}
+                >
                   Start
                 </button>
                 {/*  */}
@@ -248,7 +262,10 @@ const Staking = () => {
                 <span className="app_mining_pannel_commission">
                   1% / <span trans="home_mining_per_day">day</span>
                 </span>
-                <button className="btn-pinkred app_mining_pannel_join">
+                <button
+                  className="btn-pinkred app_mining_pannel_join"
+                  onClick={() => navigate(`/solustake1`)}
+                >
                   Start
                 </button>
                 {/*  */}
@@ -285,7 +302,7 @@ const Staking = () => {
                 <span className="app_mining_pannel_commission">
                   1% / <span trans="home_mining_per_day">day</span>
                 </span>
-                <button className="btn-pinkred app_mining_pannel_join">
+                <button className="btn-pinkred app_mining_pannel_join"  onClick={() => navigate(`/solustake2`)}>
                   Start
                 </button>
                 {/*  */}
@@ -321,7 +338,7 @@ const Staking = () => {
                 <span className="app_mining_pannel_commission">
                   1% / <span trans="home_mining_per_day">day</span>
                 </span>
-                <button className="btn-pinkred app_mining_pannel_join">
+                <button className="btn-pinkred app_mining_pannel_join"  onClick={() => navigate(`/solustake3`)}>
                   Start
                 </button>
                 {/*  */}
@@ -357,7 +374,7 @@ const Staking = () => {
                 <span className="app_mining_pannel_commission">
                   10% / <span trans="home_mining_per_day">day</span>
                 </span>
-                <button className="btn-pinkred app_mining_pannel_join">
+                <button className="btn-pinkred app_mining_pannel_join"  onClick={() => navigate(`/solustake4`)}>
                   Start
                 </button>
                 {/*  */}
@@ -632,7 +649,15 @@ const Staking = () => {
                     </span>
                   </div>
                 </div>
-                <p style={{textAlign:"center",color:"#999",marginTop:"4px"}}>No more.</p>
+                <p
+                  style={{
+                    textAlign: "center",
+                    color: "#999",
+                    marginTop: "4px",
+                  }}
+                >
+                  No more.
+                </p>
               </div>
             </TabPanel>
           </div>
