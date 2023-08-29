@@ -34,11 +34,17 @@ import DownloadApp from "./Components/DownloadApp";
 import ForgetPassword from "./Components/forgetPassword";
 import Register from "./Components/Register";
 import Payment from "./Components/Payment";
-import SOLUStake from "./Components/SOLUStake";
+import SOLUStake1 from "./Components/SOLUStake";
+import SoloStake2 from "./Components/SoloStake2";
+import SoloStake3 from "./Components/SoloStake3";
+import SoloStake4 from "./Components/SoloStake4";
 import { UserAuthContext } from "./context/UserAuthContext";
 import ProtectedRoute from "./Components/Protected/ProtectedRoute";
-
-
+// staking imports here
+import StakingOne from "./Components/pages/StakingOne"
+import StakingTwo from "./Components/pages/StakingTwo";
+import StakingThree from "./Components/pages/StakingThree";
+import StakingFour from "./Components/pages/StakingFour";
 
 
 function App() {
@@ -100,8 +106,33 @@ function App() {
           </ProtectedRoute>} />
           <Route element={<Login />} path="/login" />
           <Route element={<ProtectedRoute>
-            <SOLUStake />
-          </ProtectedRoute>} path="/solustake" />
+            <SOLUStake1 />
+          </ProtectedRoute>} path="/solustake1" />
+          <Route element={<ProtectedRoute>
+            <SoloStake2 />
+          </ProtectedRoute>} path="/solustake2" />
+          <Route element={<ProtectedRoute>
+            <SoloStake3 />
+          </ProtectedRoute>} path="/solustake3" />
+          <Route element={<ProtectedRoute>
+            <SoloStake4 />
+          </ProtectedRoute>} path="/solustake4" />
+
+
+          <Route path="/stakingone" element={<ProtectedRoute>
+            <StakingOne />
+          </ProtectedRoute>} />
+          <Route path="/stakingtwo" element={<ProtectedRoute>
+            <StakingTwo />
+          </ProtectedRoute>} />
+          <Route path="/stakingthree" element={<ProtectedRoute>
+            <StakingThree />
+          </ProtectedRoute>} />
+          <Route path="/stakingfour" element={<ProtectedRoute>
+            <StakingFour />
+          </ProtectedRoute>} />
+
+
         </Routes>
         <Bottom />
       </BrowserRouter>

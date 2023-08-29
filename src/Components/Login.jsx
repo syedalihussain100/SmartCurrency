@@ -142,11 +142,6 @@ const Login = () => {
     }
   };
 
-  // ref
-  // useEffect(() => {
-  //   ref.current.focus();
-  // }, []);
-
   return (
     <>
       <div className="app_login_panel_title">
@@ -301,13 +296,15 @@ const Login = () => {
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
           <div className="content-body position-relative">
-            <label
-              htmlFor="Loginpassword"
-              className="form-label"
-              style={{ fontSize: "18px" }}
-            >
-              Phone number
-            </label>
+            {!flag ? (
+              <label
+                htmlFor="Loginpassword"
+                className="form-label"
+                style={{ fontSize: "18px" }}
+              >
+                Phone number
+              </label>
+            ) : null}
 
             <h3> {flag ? "Verfication code" : "Whats your Number?"}</h3>
 

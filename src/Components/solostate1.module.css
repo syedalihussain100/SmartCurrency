@@ -1,0 +1,299 @@
+.card {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  border-width: 0;
+  transition: all 0.2s;
+  background-color: white;
+  margin-top: 55px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.cardBody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+}
+
+.right1 {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.paraone {
+  font-size: 1.2rem;
+  padding-bottom: 3px;
+}
+
+.paratwo {
+  color: #999;
+  font-size: 1.2rem;
+}
+
+.centerparaContainer1 {
+  color: red;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding-bottom: 5px;
+}
+
+.centerparaContainer2 {
+  color: #999;
+  font-size: 1.1rem;
+}
+
+.leftContainer {
+  margin-right: 10px;
+}
+
+.leftpara1 {
+  color: red;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding-bottom: 5px;
+}
+
+.leftpara2 {
+  color: #999;
+  font-size: 1.1rem;
+}
+
+/* part2 constiner */
+
+.part2Container {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  border-width: 0;
+  transition: all 0.2s;
+  background-color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  padding: 0.3rem 1rem;
+  margin-top: 30px;
+}
+
+.app_miningpool_info_date {
+  margin-top: 30px;
+}
+
+.app_miningpool_info_date_bg_position_relative {
+  height: 0.25rem;
+  background: #446e9b;
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+}
+
+.app_miningpool_info_date_dot_dot_left_position_absolute {
+  position: absolute;
+  left: 0px;
+  top: -4px;
+  background-color: #fff;
+  width: 12px;
+  height: 12px;
+  border-radius: 20px;
+  border: 3px solid #3ac47d;
+}
+
+.app_miningpool_info_date_dot_dot_center_position_absolute {
+  left: 47%;
+  top: -4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 20px;
+  border: 3px solid;
+  border-color: #fff;
+  background-color: #ccc;
+  position: absolute !important;
+}
+
+.app_miningpool_info_date_dot_dot_right_position_absolute {
+  right: 0px;
+  top: -4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 20px;
+  border: 3px solid;
+  border-color: #fff;
+  background-color: #ccc;
+  position: absolute !important;
+}
+
+.my3 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.stakingtextContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stakingtextContainer > div > p {
+  padding-bottom: 6px;
+}
+
+.end {
+  color: #999;
+}
+
+.part3Container {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  border-width: 0;
+  transition: all 0.2s;
+  background-color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  padding: 0.3rem 1rem;
+  margin-top: 30px;
+}
+
+.app_miningpool_info_tag {
+  border-radius: 10px 0px 10px 0px;
+  background: #0f2846;
+  height: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 13px;
+  padding-right: 13px;
+  color: #eee;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem !important;
+  width: 110px;
+  height: 40px;
+}
+
+.app_miningpool_info_tag > span {
+  text-align: center;
+  margin: auto;
+}
+
+.part3para {
+  margin-top: 30px;
+}
+
+.part3para > p {
+  color: #adadad;
+  font-size: 1.2rem;
+  word-spacing: 5px;
+  padding-bottom: 10px;
+}
+
+/* part4contaner */
+
+.part4Container {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  border-width: 0;
+  transition: all 0.2s;
+  background-color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  padding: 0.3rem 1rem;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.part4paraContainer {
+  text-align: center;
+}
+
+.part4paraContainer > img {
+  margin-bottom: 10px;
+}
+
+.endPara {
+  padding: 10px 0px;
+}
+
+.endPara > p {
+  padding: 2px 0px;
+  color: #adadad;
+}
+
+/* part5 container */
+
+.part5Container {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  border-width: 0;
+  transition: all 0.2s;
+  background-color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  padding: 0.3rem 1rem;
+  margin-top: 30px;
+}
+
+.red_dot {
+  background: red;
+  top: 5px;
+  margin-right: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 20px;
+  border: 2px solid;
+  border-color: #fff;
+}
+
+.part5left {
+  display: flex;
+  align-items: center;
+}
+
+.listPara {
+  padding-bottom: 15px;
+}
+
+.listPara > p:first-child {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #343a40;
+}
+
+.listPara p {
+  color: #adadad;
+  padding-top: 3px;
+  font-size: 1rem;
+}
+
+/* button */
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  background-color: #446e9b;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  color: #fff;
+  line-height: 40px;
+  cursor: pointer;
+  letter-spacing: 3px;
+}
+

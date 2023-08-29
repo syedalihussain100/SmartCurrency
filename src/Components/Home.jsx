@@ -199,7 +199,7 @@ const Home = () => {
             </span>
             <button
               className="btn-pinkred app_mining_pannel_join"
-              onClick={() => navigate("/solustake")}
+              onClick={() => navigate("/solustake1")}
             >
               Start
             </button>
@@ -235,7 +235,7 @@ const Home = () => {
             <span className="app_mining_pannel_commission">
               1% / <span trans="home_mining_per_day">day</span>
             </span>
-            <button className="btn-pinkred app_mining_pannel_join">
+            <button className="btn-pinkred app_mining_pannel_join" onClick={()=> navigate(`/solustake2`)}>
               Start
             </button>
             {/*  */}
@@ -267,7 +267,7 @@ const Home = () => {
             <span className="app_mining_pannel_commission">
               1% / <span trans="home_mining_per_day">day</span>
             </span>
-            <button className="btn-pinkred app_mining_pannel_join">
+            <button className="btn-pinkred app_mining_pannel_join" onClick={()=> navigate(`/solustake3`)}>
               Start
             </button>
             {/*  */}
@@ -299,7 +299,7 @@ const Home = () => {
             <span className="app_mining_pannel_commission">
               10% / <span trans="home_mining_per_day">day</span>
             </span>
-            <button className="btn-pinkred app_mining_pannel_join">
+            <button className="btn-pinkred app_mining_pannel_join" onClick={()=> navigate(`/solustake4`)}>
               Start
             </button>
             {/*  */}
