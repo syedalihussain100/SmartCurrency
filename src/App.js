@@ -45,9 +45,14 @@ import StakingOne from "./Components/pages/StakingOne"
 import StakingTwo from "./Components/pages/StakingTwo";
 import StakingThree from "./Components/pages/StakingThree";
 import StakingFour from "./Components/pages/StakingFour";
+import AdminUser from "./Components/pages/AdminUser";
+
 
 
 function App() {
+
+
+
   return (
     <UserAuthContext>
       <BrowserRouter >
@@ -132,6 +137,10 @@ function App() {
             <StakingFour />
           </ProtectedRoute>} />
 
+
+          <Route path="/admin/all-users" element={<ProtectedRoute>
+            <AdminUser />
+          </ProtectedRoute>} />
 
         </Routes>
         <Bottom />

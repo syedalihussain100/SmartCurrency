@@ -40,16 +40,12 @@ const Register = () => {
     };
 
     try {
-      await signUp(email, password);
-      console.log("User Register Successfully!");
-      navigate("/");
-      const docRef = await addDoc(collection(db, "users"), {
-        email: email,
-        name: name,
-        address: address,
-      });
-
-      console.log("Document written with ID: ", docRef.id);
+      if (!name && !email && !password && !address) {
+        window.alert("something went wrong");
+      } else {
+        await signUp(email, password, name, address);
+        navigate("/login");
+      }
     } catch (error) {
       setError(error.message);
     }
@@ -99,6 +95,7 @@ const Register = () => {
             Please input the email address
           </InputLabel>
           <OutlinedInput
+            required
             value={email}
             onChange={(e) => SetEmail(e.target.value)}
             id="outlined-adornment-password"
@@ -123,6 +120,7 @@ const Register = () => {
             Please enter your name
           </InputLabel>
           <OutlinedInput
+            required
             value={name}
             onChange={(e) => SetName(e.target.value)}
             id="outlined-adornment-password"
@@ -147,6 +145,7 @@ const Register = () => {
             Please enter your address
           </InputLabel>
           <OutlinedInput
+            required
             value={address}
             onChange={(e) => SetAddress(e.target.value)}
             id="outlined-adornment-password"
@@ -171,6 +170,7 @@ const Register = () => {
             Please enter a password
           </InputLabel>
           <OutlinedInput
+            required={true}
             value={password}
             onChange={(e) => SetPassword(e.target.value)}
             id="outlined-adornment-password"

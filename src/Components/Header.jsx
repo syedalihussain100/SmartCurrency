@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { BiUserCircle, BiSolidUser } from "react-icons/bi";
 import {
@@ -10,9 +10,13 @@ import {
   AiTwotoneRocket,
 } from "react-icons/ai";
 import { BsCurrencyDollar, BsFillVolumeUpFill, BsSafe2 } from "react-icons/bs";
-import { MdPhoneAndroid, MdInsertInvitation } from "react-icons/md";
+import {
+  MdPhoneAndroid,
+  MdInsertInvitation,
+  // MdAdminPanelSettings,
+} from "react-icons/md";
 import { HiOutlineClipboard } from "react-icons/hi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { FaWallet } from "react-icons/fa";
 
 // Drawer here
@@ -25,12 +29,55 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { BsServer } from "react-icons/bs";
-import { BiHome, BiRotateRight } from "react-icons/bi";
+import { BiRotateRight } from "react-icons/bi";
 import { useUserAuth } from "../context/UserAuthContext";
+// Dashboard data here
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+// import {
+//   onAuthStateChanged,
+
+//   // signInWithPopup,
+// } from "firebase/auth";
+import { db } from "./config/firebase";
+import { doc, getDoc } from "firebase/firestore";
+
+// import { collection, getDocs } from "firebase/firestore";
+// import { db } from "./config/firebase";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { logOut, user } = useUserAuth();
+  const { logOut, user, setUser } = useUserAuth();
+  // const [myUser, setMyUser] = useState(null);
+
+  useEffect(() => {
+    if (user && user.uid) {
+      // Fetch the user's role from Firestore when the user is authenticated
+      const userRef = doc(db, "users", user.uid);
+
+      getDoc(userRef)
+        .then((docSnap) => {
+          if (docSnap.exists()) {
+            const userData = docSnap.data();
+            if (userData && userData.role) {
+              const userRole = userData.role;
+              console.log("User Role:", userRole);
+              setUser((prevUser) => ({
+                ...prevUser,
+                role: userRole,
+              }));
+            } else {
+              console.log("User document doesn't contain a 'role' field");
+            }
+          } else {
+            console.log("User document doesn't exist");
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching user document:", error);
+        });
+    }
+  }, [user, setUser]);
 
   const [state, setState] = React.useState({
     top: false,
@@ -47,6 +94,15 @@ const Header = () => {
       return;
     }
     setState({ ...state, [anchor]: open });
+  };
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   // Define an array of icons you want to use in the Drawer
@@ -94,9 +150,11 @@ const Header = () => {
           </ListItem>
         ))}
       </List>
-      {user &&   <button className="logout" onClick={logOut}>
-        Logout
-      </button>}
+      {user && (
+        <button className="logout" onClick={logOut}>
+          Logout
+        </button>
+      )}
     </Box>
   );
 
@@ -135,6 +193,29 @@ const Header = () => {
     }
   };
 
+  // useEffect(() => {
+  //   if (user) {
+  //     // Fetch the user's role from Firestore when the user is authenticated
+  //     const userRef = doc(db, "users", user?.uid);
+  //     getDoc(userRef)
+  //       .then((docSnap) => {
+  //         if (docSnap.exists()) {
+  //           const userRole = docSnap?.data()?.role;
+  //           console.log("User Role:", userRole); // Add this line for debugging
+  //           setUser((prevUser) => ({
+  //             ...prevUser,
+  //             role: userRole,
+  //           }));
+  //         } else {
+  //           console.log("User document doesn't exist"); // Add this line for debugging
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching user document:", error);
+  //       });
+  //   }
+  // }, [user, setUser]);
+
   return (
     <>
       <div className="bc1">
@@ -152,6 +233,48 @@ const Header = () => {
             </Drawer>
           </div>
           <h3 className="text_white">SOLU/USDT</h3>
+          {/*  Dashboard here*/}
+
+          {user ? (
+            <div>
+              <p style={{ color: "#fff" }}>Welcome, {user?.email}!</p>
+              {user?.role === "admin" ? (
+                <div style={{ textAlign: "center" }}>
+                  <Button
+                    id="basic-button"
+                    aria-controls={open ? "basic-menu" : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? "true" : undefined}
+                    onClick={handleClick}
+                    sx={{ color: "white" }}
+                  >
+                    Dashboard
+                  </Button>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                      "aria-labelledby": "basic-button",
+                    }}
+                  >
+                    <Link to="/admin/all-users">
+                      <MenuItem onClick={handleClose}>Users</MenuItem>
+                    </Link>
+                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                  </Menu>
+                </div>
+              ) : (
+                <p style={{ color: "#fff" }}>You have user privileges.</p>
+              )}
+            </div>
+          ) : (
+            <p style={{ color: "#fff", fontWeight: "normal" }}>
+              Mr Admin Please Login To Access Dashboard
+            </p>
+          )}
+
           <AiOutlineMail className="icons text_white" />
         </header>
         <header className="my">

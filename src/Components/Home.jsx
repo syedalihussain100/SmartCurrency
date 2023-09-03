@@ -12,19 +12,15 @@ import Header from "../Components/Header";
 import Marquee from "react-fast-marquee";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import {
-  sendEmailVerification,
-  onAuthStateChanged,
-} from "firebase/auth";
+import { sendEmailVerification, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./config/firebase";
+import Swal from "sweetalert2";
 
 const Home = () => {
   const navigate = useNavigate();
   const [coinData, setCoinData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
-
-
 
   useEffect(() => {
     const fetchCoinData = async () => {
@@ -81,15 +77,26 @@ const Home = () => {
     if (user) {
       try {
         await sendEmailVerification(user);
-        console.log("Verification email sent.");
+        Swal.fire({
+          position: "top-start",
+          icon: "success",
+          title: "Verification Email Send",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       } catch (error) {
-        console.error("Error sending verification email:", error);
+        Swal.fire({
+          position: "top-start",
+          icon: "error",
+          title: "Oops...",
+          text: `Some thing Went Wrong! ${error?.message}`,
+          footer: '<a href="">Why do I have this issue?</a>',
+        });
       }
     } else {
       console.warn("User is not authenticated.");
     }
   };
-
 
   return (
     <>
@@ -235,7 +242,10 @@ const Home = () => {
             <span className="app_mining_pannel_commission">
               1% / <span trans="home_mining_per_day">day</span>
             </span>
-            <button className="btn-pinkred app_mining_pannel_join" onClick={()=> navigate(`/solustake2`)}>
+            <button
+              className="btn-pinkred app_mining_pannel_join"
+              onClick={() => navigate(`/solustake2`)}
+            >
               Start
             </button>
             {/*  */}
@@ -267,7 +277,10 @@ const Home = () => {
             <span className="app_mining_pannel_commission">
               1% / <span trans="home_mining_per_day">day</span>
             </span>
-            <button className="btn-pinkred app_mining_pannel_join" onClick={()=> navigate(`/solustake3`)}>
+            <button
+              className="btn-pinkred app_mining_pannel_join"
+              onClick={() => navigate(`/solustake3`)}
+            >
               Start
             </button>
             {/*  */}
@@ -299,7 +312,10 @@ const Home = () => {
             <span className="app_mining_pannel_commission">
               10% / <span trans="home_mining_per_day">day</span>
             </span>
-            <button className="btn-pinkred app_mining_pannel_join" onClick={()=> navigate(`/solustake4`)}>
+            <button
+              className="btn-pinkred app_mining_pannel_join"
+              onClick={() => navigate(`/solustake4`)}
+            >
               Start
             </button>
             {/*  */}

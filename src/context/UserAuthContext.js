@@ -6,7 +6,11 @@ import {
     signOut
     // signInWithPopup,
 } from "firebase/auth"
-import { auth } from "../Components/config/firebase";
+import { auth, db } from "../Components/config/firebase";
+import { collection, addDoc, doc, setDoc } from "firebase/firestore";
+import Swal from "sweetalert2";
+
+
 
 
 const userAuthContext = createContext();
@@ -15,18 +19,59 @@ const userAuthContext = createContext();
 
 
 export const UserAuthContext = ({ children }) => {
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState(null);
 
 
     function logIn(email, password) {
         return signInWithEmailAndPassword(auth, email, password);
     }
-    function signUp(email, password) {
-        return createUserWithEmailAndPassword(auth, email, password);
+    async function signUp(email, password, name, address) {
+        let data = await createUserWithEmailAndPassword(auth, email, password);
+        let uid = data?.user?.uid;
+
+        const userRef = doc(db, 'users', uid);
+        setDoc(userRef, { role: 'user' });
+
+
+        const docRef = await addDoc(collection(db, "userData"), {
+            uid: uid,
+            email: email,
+            name: name,
+            address: address,
+        });
+        console.log("Document written with ID: ", docRef?.id);
+
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Register Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+        });
+
     }
-    function logOut() {
-        return signOut(auth);
+
+
+    async function logOut() {
+        await signOut(auth);
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Logout Successfully!",
+            showConfirmButton: false,
+            timer: 1500,
+        });
+
+        setTimeout(() => {
+            window.location.reload()
+        }, 1000);
+
     }
+
+
+
+
+
 
 
     useEffect(() => {
@@ -44,7 +89,7 @@ export const UserAuthContext = ({ children }) => {
 
     return (
         <userAuthContext.Provider
-            value={{ user, logIn, signUp, logOut }}
+            value={{ user, setUser, logIn, signUp, logOut }}
         >
             {children}
         </userAuthContext.Provider>

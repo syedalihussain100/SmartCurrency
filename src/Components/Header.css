@@ -48,7 +48,7 @@
   border-width: 0;
   transition: all 0.2s;
   position: relative;
-  top: -65px;
+  top: -50px;
   border-radius: 10px;
 }
 
@@ -64,11 +64,10 @@
   padding: 10px;
 }
 
-.logout:hover{
+.logout:hover {
   background-color: #446e9b !important;
   color: white !important;
 }
-
 
 /* .MuiPaper-root{
   width: 28% !important;
